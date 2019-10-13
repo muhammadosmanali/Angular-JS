@@ -2,9 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="loadedfeature === 'recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedfeature !== 'recipe'"></app-shopping-list>
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>

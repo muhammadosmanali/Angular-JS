@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
     "@auth0/angular-jwt": "^3.0.1",
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.3.1",
     "bootstrap-colorpicker": "^3.2.0",
     "bootstrap-select": "^1.13.2",
     "c3": "^0.6.3",

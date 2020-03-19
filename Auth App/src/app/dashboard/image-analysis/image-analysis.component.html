@@ -1,0 +1,84 @@
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Image Analysis</h2>
+    </div>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+<div class="">
+  <div class="row">
+    <div class="container-fluid">
+      <div class="card">
+        <h5 class="card-header">Choose Image from Gallary</h5>
+        <div class="card-body p-0">
+          <p></p>
+          <form action="">
+            <input type="file" name="pic" accept="image/*" onchange="readURL(this);">
+            <input type="submit">
+
+            <script>
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            $('#blah')
+                                .attr('src', e.target.result);
+                        };
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            </script>
+          </form>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end recent orders  -->
+
+    <!-- ============================================================== -->
+    <!-- end customer acquistion  -->
+    <!-- ============================================================== -->
+  </div>
+
+
+  <div class="row">
+    <!-- ============================================================== -->
+    <!-- total revenue  -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- category | Region wise Success  -->
+    <!-- ============================================================== -->
+    <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Image</h5>
+        <div class="card-body">
+          <img id="blah" src="http://placehold.it/180" alt="your image" />
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end category revenue  -->
+    <!-- ============================================================== -->
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Analysis</h5>
+        <div class="card-body">
+          <p>Graph will be here</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

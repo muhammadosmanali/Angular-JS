@@ -1,0 +1,73 @@
+<!-- ============================================================== -->
+<!-- main wrapper -->
+<!-- ============================================================== -->
+<div class="dashboard-main-wrapper">
+  <!-- ============================================================== -->
+  <!-- navbar -->
+  <!-- ============================================================== -->
+  <div class="dashboard-header">
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+      <a class="navbar-brand">EDOSM</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto navbar-right-top">
+          <li class="nav-item dropdown nav-user">
+            <a class="nav-link nav-user-img" style="cursor: pointer;" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/edosm-logo.png" alt="user image" class="user-avatar-md rounded-circle"></a>
+            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+              <div class="nav-user-info">
+                <h5 class="mb-0 text-white nav-user-name" *ngIf="username">{{username}}</h5>
+                <h5 class="mb-0 text-white nav-user-name" *ngIf="!username">Unknown</h5>
+                <span class="status"></span><span class="ml-2 badge-dot badge-brand mr-1"></span> Available
+              </div>
+              <a class="dropdown-item" style="cursor:pointer;"><i class="fas fa-user mr-2"></i>Account</a>
+              <a class="dropdown-item" style="cursor:pointer;" (click)="onLogout()" ><i class="fas fa-power-off mr-2"></i>Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end navbar -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- left sidebar -->
+  <!-- ============================================================== -->
+  <app-navbar></app-navbar>
+  <!-- ============================================================== -->
+  <!-- end left sidebar -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- wrapper  -->
+  <!-- ============================================================== -->
+  <div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+      <div class="container-fluid dashboard-content ">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            Copyright © 2019 EDOSM. All rights reserved
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- end wrapper  -->
+  <!-- ============================================================== -->
+</div>

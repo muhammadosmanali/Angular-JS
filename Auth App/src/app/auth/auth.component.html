@@ -1,0 +1,85 @@
+<div style="margin-top:100px;" class="splash-container">
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+  <div class="alert alert-success" *ngIf="message">
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="isLoading" style="text-align: center;margin-top: 150px;">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="card" *ngIf="!isLoading">
+    <div class="card-header text-center"><p id="register" class="splash-description">{{isLoginMode ? 'LOGIN' : 'REGISTER'}}</p></div>
+    <div class="card-body">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="form-group">
+          <input class="form-control form-control-lg"
+                 id="username"
+                 type="text"
+                 placeholder="Username"
+                 autocomplete="off"
+                 name="username"
+                 ngModel
+                 required
+                 #username="ngModel">
+          <span *ngIf="!username.valid && username.touched">
+            Please enter a valid username
+          </span>
+        </div>
+        <div class="form-group" *ngIf="!isLoginMode">
+          <input class="form-control form-control-lg"
+                 id="email"
+                 type="text"
+                 placeholder="Email"
+                 autocomplete="off"
+                 required
+                 email
+                 ngModel
+                 name="email"
+                 #email="ngModel">
+          <span *ngIf="!email.valid && email.touched">
+            Please enter a valid Email
+          </span>
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-lg"
+                 id="password"
+                 type="password"
+                 placeholder="Password"
+                 required
+                 ngModel
+                 name="password"
+                 #password="ngModel">
+          <span *ngIf="!password.valid && password.touched">
+            Password field is required.
+          </span>
+        </div>
+        <div class="form-group" *ngIf="!isLoginMode">
+          <input class="form-control form-control-lg"
+                 id="confirm-password"
+                 type="password"
+                 placeholder="Confirm Password"
+                 required
+                 ngModel
+                 name="confirmPassword"
+                 #confirmPassword="ngModel">
+          <span *ngIf="!confirmPassword.valid && confirmPassword.touched">
+            Confirm Password field is required.
+          </span>
+        </div>
+        <div class="form-group" *ngIf="isLoginMode">
+          <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox"><p class="custom-control-label">Remember Me</p>
+          </label>
+        </div>
+        <br>
+        <div style="text-align: center;">
+          <button type="submit" [disabled]="!authForm.valid" class="btn btn-primary" style="color: white;">{{isLoginMode ? 'Login' : 'SignUp'}}</button> |
+          <button class="btn btn-default" (click)="onSwitchMode()" type="button">Switch to {{isLoginMode ? 'Sign Up' : 'Login'}}</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <a *ngIf="!isLoading" [routerLink]="'/'" class="link" style="margin-left: 120px;">Back to Home</a>
+</div>
